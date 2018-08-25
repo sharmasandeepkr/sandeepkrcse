@@ -1,0 +1,186 @@
+%%% LaTeX Template: Designer's CV
+%%%
+%%% Source: http://www.howtotex.com/
+%%% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
+%%% Date: March 2012
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document properties and packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,final]{memoir}
+
+% misc
+\renewcommand{\familydefault}{bch}	% font
+\pagestyle{empty}					% no pagenumbering
+\setlength{\parindent}{0pt}			% no paragraph indentation
+
+
+% required packages (add your own)
+\usepackage{flowfram}										% column layout
+\usepackage[top=1cm,left=1cm,right=1cm,bottom=1cm]{geometry}% margins
+\usepackage{graphicx}										% figures
+\usepackage{url}											% URLs
+\usepackage[usenames,dvipsnames]{xcolor}					% color
+\usepackage{multicol}										% columns env.
+	\setlength{\multicolsep}{0pt}
+\usepackage{paralist}										% compact lists
+\usepackage{tikz}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create column layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define length commands
+\setlength{\vcolumnsep}{\baselineskip}
+\setlength{\columnsep}{\vcolumnsep}
+
+% frame setup (flowfram package)
+% left frame
+\newflowframe{0.2\textwidth}{\textheight}{0pt}{0pt}[left]
+	\newlength{\LeftMainSep}
+	\setlength{\LeftMainSep}{0.2\textwidth}
+	\addtolength{\LeftMainSep}{1\columnsep}
+ 
+% small static frame for the vertical line
+\newstaticframe{1.5pt}{\textheight}{\LeftMainSep}{0pt}
+ 
+% content of the static frame
+\begin{staticcontents}{1}
+\hfill
+\tikz{%
+	\draw[loosely dotted,color=RoyalBlue,line width=1.5pt,yshift=0]
+	(0,0) -- (0,\textheight);}%
+\hfill\mbox{}
+\end{staticcontents}
+ 
+% right frame
+\addtolength{\LeftMainSep}{1.5pt}
+\addtolength{\LeftMainSep}{1\columnsep}
+\newflowframe{0.7\textwidth}{\textheight}{\LeftMainSep}{0pt}[main01]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% define macros (for convience)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Sep}{\vspace{1.5em}}
+\newcommand{\SmallSep}{\vspace{0.5em}}
+
+\newenvironment{AboutMe}
+	{\ignorespaces\textbf{\color{RoyalBlue} About me}}
+	{\Sep\ignorespacesafterend}
+	
+\newcommand{\CVSection}[1]
+	{\Large\textbf{#1}\par
+	\SmallSep\normalsize\normalfont}
+
+\newcommand{\CVItem}[1]
+	{\textbf{\color{RoyalBlue} #1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Begin document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Left frame
+%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+	\hfill
+	\includegraphics[width=0.6\columnwidth]{photo}
+	\vspace{-7cm}
+\end{figure}
+
+\begin{flushright}\small
+	Sandeep Kumar \\
+	\url{sandeepkumarp.azurewebsites.net}  \\
+
+	(+91) 8809885629
+\end{flushright}\normalsize
+\framebreak
+
+
+% Right frame
+%%%%%%%%%%%%%%%%%%%%
+\Huge\bfseries {\color{RoyalBlue} Sandeep Kumar} \\
+\Large\bfseries  Computer Science Engineer (Blockchain  and Decentralised  Network Programming + golang) \\
+
+\normalsize\normalfont
+
+% About me
+\begin{AboutMe}
+ I am Computer Science Engineer seeking to explore the modern approach to networking and  Blockchain  based application , which is intrigued by its state preservation by sharing memory based networking approach.
+                       I am curious to develop intelligent network. Mathematical Reasoning has one of my best hobbies and some of my achievements that i have Scored 100 percentile in 
+                       All India Mathematics Olympiad in class 10th.
+\end{AboutMe}
+
+% Experience
+\CVSection{Experience}
+\CVItem{March 2017, Sabjidukan e-commerce Project}\\Writting Server and client Interface  for Sabjidukan( e-commerce based on server and client arch.  ).
+
+\SmallSep
+
+\CVItem{July 2017, Doon Public School, Jharsuguda, India}\\
+Writting Server and client Interface for Doon Public School, Jharsuguda, Orissa. Based Portal. http://doonpublicschooljsg.com
+\Sep
+
+% Education
+\CVSection{Education}
+\CVItem{... 2013 - Upto Class 10th}\\
+O.P Jindal School, Raigarh
+Result: Scored CGPA 10, Scored A.I.R- 1 in National Mathematics Olympiad
+\SmallSep
+
+\CVItem{2015-2019, Bachelor of Science in Computer Science and Engineering}\\
+Niit University, India
+\SmallSep
+
+\CVItem{ 2013 -  2015, Delhi Public School, Ranchi}\\
+Result: Scored ~90% in class 12th
+\Sep
+
+% Skills
+\CVSection{Skills}
+\CVItem{Platforms}
+\begin{multicols}{3}
+\begin{compactitem}[\color{RoyalBlue}$\circ$]
+	\item Lorem 
+	\item Ipsum 
+\end{compactitem}
+\end{multicols}
+\SmallSep
+
+\CVItem{Computer software}
+\begin{multicols}{3}
+\begin{compactitem}[\color{RoyalBlue}$\circ$]
+	\item Lorem 
+	\item Ipsum 
+	\item Dolor 
+	\item Sit 
+	\item Amet
+	\item Consectetur 
+	\item Adipiscing 
+	\item Elit
+	\item \ldots
+\end{compactitem}
+\end{multicols}
+\Sep 
+
+\CVSection{Something other}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel bibendum metus. Proin rutrum pharetra molestie. Cras sollicitudin nulla nec leo lobortis in tristique purus pretium. Ut eu felis nulla. Pellentesque condimentum justo ut ligula feugiat nec facilisis tellus ultricies. Nullam sit amet dictum ipsum. Sed lacus neque, hendrerit eu rhoncus nec, pellentesque vitae sem.
+
+\clearpage
+\framebreak
+\framebreak
+
+\CVSection{Something else}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel bibendum metus. Proin rutrum pharetra molestie. Cras sollicitudin nulla nec leo lobortis in tristique purus pretium. Ut eu felis nulla. Pellentesque condimentum justo ut ligula feugiat nec facilisis tellus ultricies. Nullam sit amet dictum ipsum. Sed lacus neque, hendrerit eu rhoncus nec, pellentesque vitae sem.
+\Sep
+
+% References
+\CVSection{References}
+References upon request.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
